@@ -25,6 +25,10 @@ def draw_rects(img, rects, color):
 # get proposed rectangles from LBP cascade
 def get_lbp_rects(img):
 
+    # print(img)
+
+
+
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     gray = cv2.equalizeHist(gray)
 

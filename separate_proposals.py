@@ -13,24 +13,29 @@ files = glob.glob(os.path.join(path, '*.png'))
 
 
 
-
-
-
 classifier = init_caffe_netwrok()
 
 
 
 
-predictions = classify_many(files[0:100], classifier)
+
+for k in range(0, len(files), 1000):
 
 
-print(predictions)
 
-for i, pred in enumerate(predictions):
+    print(k)
 
-    if np.argmax(pred) == 1:
-        # print('moving')
-        move(files[i], os.path.join(plates_path, str(uuid.uuid4())))
+    predictions = classify_many(files[k:k+1000], classifier)
+
+
+
+    print(predictions)
+
+    for i, pred in enumerate(predictions):
+
+        if np.argmax(pred) == 1:
+            # print('moving')
+            move(files[k:k+1000][i], os.path.join(plates_path, str(uuid.uuid4())))
 
 
 
