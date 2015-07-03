@@ -6,8 +6,13 @@ import Image
 from shutil import *
 import uuid
 
-path = '/home/naz/Desktop/lbp_proposals'
-plates_path = '/home/naz/Desktop/classified_plates'
+path = '/media/naz/3534-E743/avto_nomera_downloads/kz_crops/High_authorities_1993/'
+
+
+
+
+
+plates_path = '/home/naz/Desktop/classified_plates_2'
 
 files = glob.glob(os.path.join(path, '*.png'))
 
